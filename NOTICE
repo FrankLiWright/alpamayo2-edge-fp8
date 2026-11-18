@@ -1,0 +1,40 @@
+Alpamayo 2 Edge FP8 (weight-only)
+=================================
+
+This repository contains a derivative of NVIDIA Alpamayo 2 Edge.
+
+Upstream model
+--------------
+  Name     : NVIDIA Alpamayo 2 Edge
+  Source   : https://huggingface.co/nvidia/Alpamayo2-Edge
+  Code     : https://github.com/NVlabs/alpamayo2-edge
+  Developed by NVIDIA Corporation as part of the Alpamayo Open Platform
+  https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/
+
+Model weights in this repository are derived from the upstream checkpoint and
+are distributed under the OpenMDW License Agreement, version 1.1 (OpenMDW-1.1).
+A copy of that agreement is in the LICENSE file of this repository. Upstream
+licence terms require retaining both that agreement and the notices of origin;
+both are retained here.
+
+The upstream tokenizer, processor and configuration assets are redistributed
+unchanged and remain NVIDIA's, under the same OpenMDW-1.1 terms.
+
+New material in this repository
+-------------------------------
+The FP8 quantization scheme, the quantized weights produced by it, and the
+following source files are new work and are provided under the Apache License,
+Version 2.0 (see the SPDX headers):
+
+    fp8_quant.py       FP8 (e4m3) weight-only modules and the swap routine
+    load_fp8.py        loader for the quantized checkpoint
+    quantize_fp8.py    reproducible quantizer (BF16 release -> this checkpoint)
+    example.py         minimal inference example
+
+Upstream source code (NVlabs/alpamayo2-edge) remains under Apache License 2.0.
+This repository is not affiliated with, endorsed by, or supported by NVIDIA.
+
+Disclaimer
+----------
+The quantized checkpoint is provided "AS IS", without warranty of any kind.
+See LICENSE for the full disclaimer that applies to the Model Materials.
